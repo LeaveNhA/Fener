@@ -24,12 +24,12 @@ Add dependency to your dependencies vector.
 ### Using with Re-Frame
 If you want to use `fener` with re-frame, all you have to do is:
 
-Require `fener.core` namespace from your event namespace to load existed fx function that comes with `Fener`
+Require `fener.re-frame` namespace from your event namespace to load existed fx function that comes with `Fener`
 
 ```clojure
 (ns perfect.re-frame.app.events
 (:require ...
-          [fener.core]))
+          [fener.re-frame]))
 
 ```
 
