@@ -45,7 +45,7 @@ The effect named `:fener/toast!` is loaded and ready to use.
      {:db db
       :fener/toast! [:info "Giriş yapılıyor..." {} :login-toast]
       :suluk! [:get "https://mockbin.org/delay/200"
-               #_{:body {:id id-cred :pass pass-cred}}
+               {:body {:id id-cred :pass pass-cred}}
                [:fail-f #(js/console.error "Başarısız!")
                 :done-f #(re-frame/dispatch [:app/login-callback])]]})))
 
