@@ -12,14 +12,39 @@ Add dependency to your project.clj file.
 Add dependency to your dependencies vector.
 
 ```clojure
-...
-:dependencies
-     [...
-       [org.clojars.scknkkrer/fener "0.0.20"]
-      ...]
-...
+  {,,,
+  :dependencies
+       [,,,
+         [org.clojars.scknkkrer/fener "0.0.20"]
+        ,,,]
+  ,,,}
 
 ```
+
+### Add Javascript Dependency
+Add Clojurescript Build compiler option to generate `react-toastify` `namespace` to use this library.
+You can configure Webpack to use external library like that.
+```clojure
+                    {,,,
+                      :compiler {,,,
+                        :foreign-libs [{:file "resources/public/js/bundle.js"
+                                    :provides ["react" "react-dom"
+                                               "react-toastify"
+                                               "react-yandex-maps"],
+                                    :requires ["react" "react-dom"
+                                               "react-toastify"
+                                               "react-yandex-maps"]
+                                    :global-exports {react React
+                                                     react-dom ReactDOM
+                                                     react-toastify ReactToastify
+                                                     react-yandex-maps ReactYandexMaps}}]
+                                                   ,,,}
+                      ,,,}
+```
+
+### IMPORTANT Note
+This library depends on `react-toastify` `namespace` to give the functionality as a Re-Frame Effect Helper Library.
+If you do not configure your project to generate `react-toastify` `namespace` properly, you will get errors...
 
 ### Using with Re-Frame
 If you want to use `fener` with re-frame, all you have to do is:
