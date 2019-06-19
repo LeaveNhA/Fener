@@ -1,4 +1,4 @@
-# SULUK
+# Fener
 React-Toastify wrapper for the re-frame!
 
 ## Install
